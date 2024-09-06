@@ -1,0 +1,11 @@
+all: model.o main.o
+	g++ model.o main.o -std=c++11 -o model.out
+	
+main.o: main.cpp
+	g++ -c -std=c++11 main.cpp
+
+model.o: model.cpp model.h
+	g++ -c -std=c++11 model.cpp
+
+clean:
+	rm *.o *.out
